@@ -7,7 +7,9 @@ import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
 import java.util.ServiceLoader;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CollisionDetector implements IPostEntityProcessingService {
 
     private IAsteroidSplitter asteroidSplitter;
