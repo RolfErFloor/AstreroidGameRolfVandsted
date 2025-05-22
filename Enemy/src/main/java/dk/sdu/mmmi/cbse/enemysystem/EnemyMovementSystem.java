@@ -9,6 +9,9 @@ import dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
 import java.util.Collection;
 import java.util.Random;
 import java.util.ServiceLoader;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.stream.Collectors.toList;
 
@@ -17,8 +20,10 @@ public class EnemyMovementSystem implements IEntityProcessingService {
 
     private final Random random = new Random();
 
+
     @Override
     public void process(GameData gameData, World world) {
+        Collection<? extends BulletSPI> bulletSPIs = getBulletSPIs();
 
         for (Entity enemy : world.getEntities(Enemy.class)) {
 
@@ -53,6 +58,13 @@ public class EnemyMovementSystem implements IEntityProcessingService {
         if (enemy.getY() > gameData.getDisplayHeight()) {
             enemy.setY(0);
         }
+
+            if (random.nextDouble() < 0.02 && !bulletSPIs.isEmpty()) {
+                bulletSPIs.stream().findFirst().ifPresent(
+                        spi -> world.addEntity(spi.createBullet(enemy, gameData))
+                );
+            }
+
 
                                         
         }

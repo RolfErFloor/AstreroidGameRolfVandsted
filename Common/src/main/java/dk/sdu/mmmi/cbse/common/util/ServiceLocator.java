@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public enum ServiceLocator {
-
+/*
     INSTANCE;
 
     private static final Map<Class, ServiceLoader> loadermap = new HashMap<>();
@@ -71,5 +71,5 @@ public enum ServiceLocator {
 
         return list;
     }
-
+*/
 }
