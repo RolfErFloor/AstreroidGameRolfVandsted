@@ -11,7 +11,7 @@ module Core {
     uses dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;
     uses dk.sdu.mmmi.cbse.common.services.IPostEntityProcessingService;
 
-    exports dk.sdu.mmmi.cbse.main to spring.beans, spring.context;
+    exports dk.sdu.mmmi.cbse.main;
 }
 
 
