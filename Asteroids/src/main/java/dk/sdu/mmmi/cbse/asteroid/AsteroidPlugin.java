@@ -11,10 +11,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-/**
- *
- * @author corfixen
- */
 public class AsteroidPlugin implements IGamePluginService {
 
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor(r->{

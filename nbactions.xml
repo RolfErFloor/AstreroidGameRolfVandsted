@@ -3,6 +3,7 @@
         <action>
             <actionName>CUSTOM-exec</actionName>
             <displayName>exec</displayName>
+            <recirsove>false</recirsove>
             <goals>
                 <goal>exec:exec</goal>
             </goals>
